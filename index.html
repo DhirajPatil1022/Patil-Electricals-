@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patil Electricals - Expert Electrical Services in Karad</title>
+    <meta name="description" content="Patil Electricals provides comprehensive electrical services including maintenance, house wiring, concealed fittings, and more in Karad city. Professional, reliable, and affordable.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #1e3a8a; 
+            --secondary-color: #0ea5e9;
+            --accent-color: #facc15; 
+            --text-dark: #111827;
+            --text-light: #6b7280;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+            --shadow: 0 10px 30px rgba(0,0,0,0.1);
+            --border: 1px solid #e2e8f0;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, var(--bg-light) 0%, #e2e8f0 100%);
+            scroll-behavior: smooth;
+        }
+        header {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--primary-color);
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(30,58,138,0.85), rgba(14,165,233,0.7)), url('https://images.unsplash.com/photo-1621905235277-333e6022e030?auto=format&fit=crop&q=80&w=1200');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            text-align: center;
+            padding: 140px 2rem;
+        }
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .cta-btn {
+            display: inline-block;
+            background: var(--accent-color);
+            color: var(--text-dark);
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(250,204,21,0.4);
+        }
+        .cta-btn:hover {
+            transform: scale(1.05);
+            background: #fde047;
+        }
+
+        section {
+            max-width: 1200px;
+            margin: 6rem auto;
+            padding: 0 2rem;
+        }
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+            position: relative;
+        }
+        h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--accent-color);
+            margin: 10px auto;
+        }
+
+        /* About */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .about-image {
+            background: linear-gradient(45deg, var(--secondary-color), var(--accent-color));
+            height: 350px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 6rem;
+            box-shadow: var(--shadow);
+        }
+
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .service-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: all 0.3s;
+            border-bottom: 4px solid transparent;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-bottom: 4px solid var(--secondary-color);
+        }
+        .service-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        .project-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        .project-img {
+            height: 220px;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: bold;
+            padding: 20px;
+            text-align: center;
+        }
+        .project-content {
+            padding: 2rem;
+        }
+
+        /* Contact */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .contact-item {
+            background: var(--white);
+            padding: 1.2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .insta-link {
+            text-decoration: none;
+            color: #E1306C;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+        input, textarea {
+            padding: 1rem;
+            border: var(--border);
+            border-radius: 10px;
+            background: #f1f5f9;
+        }
+        button {
+            background: #25d366; /* WhatsApp Green */
+            color: #000000; /* BLACK TEXT AS REQUESTED */
+            padding: 1.2rem;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #128c7e;
+        }
+
+        /* FLOATING BUTTONS */
+        .floating-call {
+            position: fixed;
+            bottom: 25px;
+            left: 25px;
+            background: #0ea5e9;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            z-index: 1000;
+            text-decoration: none;
+            animation: pulse 2s infinite;
+        }
+        .floating-insta {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            z-index: 1000;
+            text-decoration: none;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(14, 165, 233, 0.7); }
+            70% { transform: scale(1.1); box-shadow: 0 0 0 15px rgba(14, 165, 233, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(14, 165, 233, 0); }
+        }
+
+        footer {
+            background: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 3rem 2rem;
+            margin-bottom: 0;
+        }
+        footer a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .hamburger { display: flex; }
+            .nav-links {
+                position: fixed; 
+                left: -100%; 
+                top: 70px;
+                flex-direction: column; 
+                background: var(--white);
+                width: 100%; 
+                transition: 0.3s; 
+                padding: 2rem 0;
+                text-align: center; /* CENTER ALIGNMENT AS REQUESTED */
+            }
+            .nav-links.active { left: 0; }
+            .nav-links li { width: 100%; }
+            .nav-links a { display: block; padding: 15px 0; font-size: 1.2rem;}
+            .about-content, .contact-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="tel:9545926421" class="floating-call" title="Call Us Now">
+        <i class="fas fa-phone"></i>
+    </a>
+    <a href="https://www.instagram.com/patil_electricals_karad" target="_blank" class="floating-insta" title="Follow on Instagram">
+        <i class="fab fa-instagram"></i>
+    </a>
+
+    <header>
+        <nav>
+            <div class="logo">⚡ Patil Electricals</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <h1>Powering Karad with Expert Electrical Solutions</h1>
+        <p>Your trusted partner for high-quality house wiring, commercial installations, and maintenance services across Maharashtra.</p>
+        <a href="#contact" class="cta-btn">Get Free Quote on WhatsApp</a>
+    </section>
+
+    <section id="about">
+        <h2>About Patil Electricals</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>Established in Karad, Patil Electricals has been the trusted name in electrical services for over 30 years. Our team of certified electricians handles everything from routine maintenance to complex installations with precision and safety.</p>
+                <p>We specialize in residential, commercial, and industrial projects, ensuring compliance with all safety regulations. Customer satisfaction is our priority, backed by 1000+ completed projects.</p>
+                <p><strong>Why choose us?</strong> Licensed experts, 24/7 emergency support, and competitive pricing for premium quality work.</p>
+            </div>
+            <div class="about-image">🏢⚡</div>
+        </div>
+    </section>
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🔧</div>
+                <h3>Electrical Maintenance</h3>
+                <p>Routine checks, repairs, and preventive maintenance for all electrical systems.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🏠</div>
+                <h3>House Wiring</h3>
+                <p>Complete new wiring and modern safety upgrades for residential homes.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🔌</div>
+                <h3>Concealed Fittings</h3>
+                <p>Professional concealed wiring for a modern, sleek, and safe look.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">💡</div>
+                <h3>Lighting Installation</h3>
+                <p>LED, smart lighting, and decorative lighting for indoor/outdoor spaces.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🔋</div>
+                <h3>Power Backup</h3>
+                <p>UPS, Inverters, and Solar Panel installations for uninterrupted energy.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🏢</div>
+                <h3>Commercial Works</h3>
+                <p>Industrial panels, office wiring, and complex commercial electrical setups.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Featured Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-img">Patil Hospital, Shirval</div>
+                <div class="project-content">
+                    <h3>Healthcare Facility</h3>
+                    <p>Our team successfully completed all electrical work for Patil Hospital, located in Shirval, Pune. Ensuring 100% safety and medical-grade power reliability.</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-img">Residential Apartment, Ravet</div>
+                <div class="project-content">
+                    <h3>Multi-Story Residential</h3>
+                    <p>Comprehensive electrical works for a 4-floor residential apartment in Ravet, Pune. Includes complete house wiring and concealed fittings.</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-img">Solar Installation</div>
+                <div class="project-content">
+                    <h3>Green Energy Farm</h3>
+                    <p>3 to 12kw solar setup with battery backup for local residencies in the Karad region.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Get In Touch</h2>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <div class="contact-item"><strong>📍 Address:</strong> Karad, Maharashtra 415110</div>
+                <div class="contact-item"><strong>📞 Phone:</strong> +91 9545926421</div>
+                <div class="contact-item"><strong>✉️ Email:</strong> dhirajpatil1022@gmail.com</div>
+                <div class="contact-item"><strong>🕒 Hours:</strong> 10AM - 8PM | 24/7 Emergency</div>
+                <div class="contact-item">
+                    <strong>📸 Instagram:</strong> 
+                    <a href="https://www.instagram.com/patil_electricals_karad" target="_blank" class="insta-link">
+                        @patil_electricals_karad
+                    </a>
+                </div>
+            </div>
+            <form id="whatsappForm">
+                <input type="text" id="name" placeholder="Your Name" required>
+                <input type="tel" id="phone" placeholder="Your Phone Number" required>
+                <textarea id="message" rows="4" placeholder="Describe your project (e.g., House wiring in Karad)..." required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Patil Electricals. All rights reserved. | Licensed & Insured</p>
+        <p>Designed and developed by <a href="#" target="_blank">Bluechip Web Labs</a></p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        }
+
+        // Close menu when a link is clicked (Mobile)
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.nav-links').classList.remove('active');
+            });
+        });
+
+        document.getElementById('whatsappForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const message = document.getElementById('message').value;
+            const whatsappNumber = "918468825420";
+
+            const encodedMessage = encodeURIComponent(
+                `Hello Patil Electricals,\n\nMy name is: ${name}\nPhone: ${phone}\nProject Details: ${message}`
+            );
+
+            // SUCCESS POPUP MESSAGE
+            alert("Message delivered successfully! Redirecting to WhatsApp...");
+
+            window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
+        });
+    </script>
+</body>
+</html>
