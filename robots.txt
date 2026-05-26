@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap Location
+Sitemap: https://dhirajpatil1022.github.io/Patil-Electricals-/sitemap.xml
+
+# Optional Crawl Delay
+Crawl-delay: 5
